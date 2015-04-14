@@ -1,6 +1,6 @@
 # MASA-CUDAlign
 
-The **MASA-CUDAlign extension** is used with the [MASA architecture](https://github.com/edanssandes/MASA-Core) to align DNA sequences of unrestricted size with the Smith-Waterman algorithm combined with Myers-Miller. It uses the NVIDIA CUDA platform to accelerate the computation time. This extension were able to align huge DNA sequences with more than 200 million base pairs (MBP). 
+The **MASA-CUDAlign extension** is used with the [MASA architecture](https://github.com/edanssandes/MASA-Core) to align DNA sequences of unrestricted size with the Smith-Waterman algorithm combined with Myers-Miller. It uses the NVIDIA CUDA platform to accelerate the computation time. This extension is able to align huge DNA sequences with more than 200 million base pairs (MBP). 
 
 ### Download
 
