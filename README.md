@@ -1,6 +1,8 @@
 # MASA-CUDAlign
 
+<p align="justify">
 The **MASA-CUDAlign extension** is used with the [MASA architecture](https://github.com/edanssandes/MASA-Core) to align DNA sequences of unrestricted size with the Smith-Waterman algorithm combined with Myers-Miller. It uses the NVIDIA CUDA platform to accelerate the computation time. This extension is able to align huge DNA sequences with more than 200 million base pairs (MBP). 
+</p>
 
 ### Download
 
@@ -8,7 +10,9 @@ We intend to release the source code soon.
 
 ### Performance Benchmarks
 
-We have executed MASA-CUdalign in many different environment. Here we will present the best results in different scenarios. We recommend to read the reference papers in order to understand the feature improvements in each test.
+<p align="justify">
+We have executed MASA-CUDAlign in many different environment. Here we will present the best results in different scenarios. We recommend to read the reference papers in order to understand the feature improvements in each test.
+</p>
 
 **Test Environment (Homogeneous GPU cluster)**: <a href="http://dx.doi.org/10.1109/CCGrid.2014.18"><font size=1>[CCGRID2014]</font></a><br>
 Minotauro Cluster - 64 x NVidia Tesla M2090. 
