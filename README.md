@@ -11,7 +11,7 @@ We intend to release the source code soon.
 ### Performance Benchmarks
 
 <p align="justify">
-We have executed MASA-CUDAlign in many different environment. Here we will present the best results in different scenarios. We recommend to read the reference papers in order to understand the feature improvements in each test.
+We have executed MASA-CUDAlign in many different environments. Here we will present the best results in different scenarios. We recommend to read the reference papers in order to understand the feature improvements in each test.
 </p>
 
 **Test Environment (Homogeneous GPU cluster)**: <a href="http://dx.doi.org/10.1109/CCGrid.2014.18"><font size=1>[CCGRID2014]</font></a><br>
