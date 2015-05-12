@@ -1,0 +1,8 @@
+============
+TODO LIST
+============
+
+* Split the result (max/max_pos) of the last short phase execution, before/after the checkbound;
+* Correct bug when --fork with unsuported GPU (not suported capability). The second process freezes;
+* Verify "vadd.s32.s32.s32.sat.max r1, r2, r3, c" PTX command to replace kernel_sw;
+* Create conditional use of texture memory;

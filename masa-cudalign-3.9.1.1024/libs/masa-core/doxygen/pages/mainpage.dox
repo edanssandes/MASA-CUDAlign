@@ -1,0 +1,81 @@
+/**
+\mainpage Malleable Architecture for %Sequence Aligners
+
+
+MASA (Malleable Architecture for %Sequence Aligners) is a software architecture 
+that simplifies the implementation of the Smith-Waterman algorithm with Affine 
+Gap penalties in any software/hardware architecture. MASA is divided in two parts: 
+the <i>"MASA Core"</i>, containing all the portable code; and the <i>"MASA Extension"</i>, 
+that contains the non-portable code. In order to create a new MASA extension, the non-portable 
+part of the code must be re-implemented while the portable code must be kept untouched. 
+The MASA architecture uses an oriented object paradigm to make the non-portable code low 
+dependent of the portable code. This loosely coupled architecture produces an easier 
+integration between the non-portable code and the portable code. 
+
+
+Each ported version of MASA to other architecture is called a "MASA Extension" 
+and it will be mentioned like <tt>MASA-<ARCH></tt>, where <tt><ARCH></tt> is 
+the ported architecture. For instance, a MASA extension that uses the SSE2 instruction
+set can be called <tt>MASA-SSE2</tt>, while a MASA extension for MPI can be called <tt>MASA-MPI</tt>.
+
+
+CUDAlign is the MASA extension for NVidia CUDA architecture. Historically,
+CUDAlign was firstly developed and then MASA was derived from it. MASA was 
+developed as an effort to allow CUDAlign to be ported to any hardware/software 
+architecture. Despite the fact that MASA was derived from CUDAlign, we will treat 
+CUDAlign as the MASA-CUDA extension.
+
+MASA inherited many algorithmic optimizations from CUDAlign, like linear memory usage, 
+orthogonal execution, block pruning, incremental stages and checkpoint saving.
+The architectural optimizations of CUDAlign was kept in the MASA-CUDA extension code, 
+for example loop unrollings, cached textures, k-neighborhood and phase division.
+
+CUDAlign and its optimizations are well explained in \cite CUDALIGN:PPOPP2010 
+\cite CUDALIGN:IPDPS2011 \cite CUDALIGN:TPDS2012 
+\cite CUDALIGN:PPOPP2014 \cite CUDALIGN:CCGRID2014.
+
+
+\section sec_porting Porting MASA to other architectures
+
+To port MASA to any architecture, you must create an IAligner implementation (or a subclass of AbstractAligner) and 
+a Parameter handler (a subclass of AbstractAlignerParameters).
+Then, create a main.cpp with the <tt>main()</tt> entry point and call the <tt>libmasa_entry_point()</tt>. 
+Finally, compile the extension source code and link the object to the libmasa static library.
+
+To understand how to implement these subclasses, read the documentation of IAligner, AbstractAligner and AbstractAlignerParameters. 
+Then, you may want to copy some of the already existing extension to start a new extension for another platform. 
+Proper changes to the Makefile.am may be necessary. 
+
+The MASA core is not thread-safe, so the extension must guarantee that the libmasa are not called concurrently. 
+So, if the Aligner handles simultaneous thread with unsafe calls, consider extending from AbstractAlignerSafe instead of AbstractAligner.
+
+
+\section sec_compiling_core Compiling MASA-Core
+
+Execute the following commands to compile MASA-Core.
+
+<tt>
+autoreconf --force --install<br>
+./configure<br>
+make
+</tt>
+
+This will create the libmasa.a static library.
+
+Further compilation parameters are available using <tt>./configure --help</tt>
+
+
+\section sec_executing_extension Executing a MASA extension
+
+All MASA extensions has the set of basic parameters, though they can extent
+this set to include extension-specific parameters. Considering that the 
+extension binary is <tt>masa-extension</tt>, the most simple execution is 
+
+<tt>./masa-extension [fasta 1] [fasta 2]</tt><br> 
+
+but there are many parameters that may be necessary to use in order to obtain 
+the desired features.
+
+See <tt>./masa-extension --help</tt> to an explanation of all the execution parameters.
+
+*/

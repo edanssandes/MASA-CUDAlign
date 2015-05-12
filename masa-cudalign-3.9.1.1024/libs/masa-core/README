@@ -1,0 +1,36 @@
+	                     MASA-Core library
+
+MASA (Multi-Platform Architecture for Sequence Aligners) is a software architecture 
+that simplifies the implementation of the Smith-Waterman algorithm with Affine 
+Gap penalties in any software/hardware architecture. 
+
+MASA is divided in two parts: the "MASA Core", containing all the portable 
+code; and the "MASA Extension", that contains the non-portable code. In order 
+to create a new MASA extension, the non-portable part of the code must be 
+reimplemented while the portable code must be kept untouched. The MASA 
+architecture uses an oriented object paradigm to make the non-portable code 
+low dependent of the portable code. This loosely coupled architecture produces 
+an easier integration between the non-portable code and the portable code.
+
+This project is published under the GPLv3 License.
+
+===========
+Compilation
+===========
+
+     $ ./configure 
+     $ make
+     
+This will generate the 'libmasa.a' static library.
+
+
+===========
+Documentation
+===========
+
+To implement a new MASA extension, read the Doxygen directory. You will find 
+basic instructions about the the MASA architecture and the class documentation.
+
+     $ cd doxygen
+     $ doxygen masa-core.doxyfile
+     $ chromium-browser index.html

@@ -1,0 +1,130 @@
+
+====================
+Version 3.0.1.1008
+====================
+
+- libMasa changes:
+ * Improvements in the multigpu support (--fork parameter).
+ * Sanity check in the command line parameters for forked processes. For
+	example, with the --fork parameter, only stage-1 is allowed and 
+	flushing rows is disabled.
+	
+- CUDAlign changes:  
+ * Feature ENORMOUS_ALIGNMENT was implemented to allow alignment of sequences
+	longer than 134MBP, with a performance penalty of 10%. This feature
+	removes the read-only texture cache from all the data structures. To enable
+	this feature, use ./configure --enable-enormous-alignments.
+
+
+====================
+Version 3.0.1.1009
+====================
+
+- libMasa changes:
+ * Better error handling when the fasta file does not exists
+
+- CUDAlign changes:
+ * Removed bug in the sequence size check for ENORMOUS_ALIGNMENT.
+ * Better statistics information produced by the CUDAlign
+ * Changes in the automatic block assignment for each GPU.
+ * Unsupported GPUs are not assigned to a valid GPU ID.
+ 
+====================
+Version 3.0.1.1010
+====================
+
+- libMasa changes:
+ * Removed BUG in the circular Buffer. When the output buffer was not empty,
+    the destruct method enters in deadlock. Furthermore, there were some
+    procedures that did not acquired the mutex lock, what leads to a
+    possible deadlock due a race condition.
+ 
+
+====================
+Version 3.0.1.1011
+====================
+
+- libMasa changes:
+ * The --split parameter was divided in --split and --part parameters
+ * The --split parameters can be used together with the --fork parameter.
+ * The syntax of parameters --split and --fork was changed from A/B/C to A,B,C.
+ * A better argument error check was implemented for --split and --fork.
+ * Statistics methods (blocking time, usage, etc) in the circular Buffers.
+ * Removed BUG in file Buffer. There was a SEGFAULT error when a file Buffer 
+    was terminated.
+ * Better error messages in SpecialRowWriter.
+ * Stderr statistics are logged in a frequency of 5.0s instead of 2.0s.
+
+====================
+Version 3.0.1.1012
+====================
+
+- libMasa changes:
+ * A better argument error check when using single integer parameter 
+    was implemented for --split and --fork. This avoids the usage of wrong
+    characters in these parameters.
+ * Fine tuning of the log interval in circular Buffers.
+
+====================
+Version 3.0.1.1013
+==================== 
+
+- libMasa changes:
+ * Removed BUG in stage4. When the half partition was computed with orthogonal
+    execution, the orthogonal size of the half partition could not be larger
+    than the vector size. This check was not made, leading to a SIGSEGV error.
+ * The first read/write operation in the circular buffers is now being logged. 
+ * The maximum size of the buffer is printed in the beginning of the log.
+ * Removed BUG that prints wrong values when the buffer delta is negative.
+ * Stderr statistics are logged in a frequency of 10.0s instead of 5.0s.
+ 
+====================
+Version 3.0.1.1014
+==================== 
+
+- libMasa changes:
+ * Removed BUG that print wrong information in the statistics file. The problem
+    is that the ENORMOUS ALIGNMENT was always printed as FALSE, even when it
+    was enabled with the --enable-enormous-alignment.
+ * Created Null Buffer for benchmark purposes.
+ * Removed BUG that wrongly reads the E-component of the first column.
+ 
+====================
+Version 3.0.1.1015
+==================== 
+
+- libMasa changes:
+ * Removed stage-3 BUG that do not consider full gap partitions finishing in
+    H-component.
+ * Implemented unit tests for aligners.
+ * Special rows in the last partition of stage 2 were totally flushed, leading
+    to a very big partition that could not be aligned in stage 4.
+ 
+ 
+====================
+Version 3.0.2.1016
+==================== 
+
+- libMasa changes:
+ * IAligner has a new alignPartition method, instead of the
+    prepare/processNextIteration methods.
+ * There is no setProcessSpecialRowFunction anymore. Now, we call the 
+    setSpecialRowWriter function instead.
+ * Removed several BUGs in the semi-global alignments.
+ * Created some safe-thread methods and classes to be used by the aligner. 
+ * The Log procedure is done in a separate thread.
+ 
+- CUDAlign changes:
+ * Removed BUG that wrongly dispatches the last cell.
+ * Changed code to support the new MASA interface.   
+ 
+ 
+====================
+Version 3.0.2.1017
+==================== 
+
+- libMasa changes:
+ * ChearN option converts uppercase "N" to lower case "n" in one of the sequences.
+    This avoids matching N's without removing them.
+ 
+ 

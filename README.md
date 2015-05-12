@@ -6,7 +6,23 @@ The <b>MASA-CUDAlign extension</b> is used with the <a href="https://github.com/
 
 ### Download
 
-We intend to release the source code soon.
+Latest Version: [masa-cudalign-3.9.1.1024.tar.gz](releases/masa-cudalign-3.9.1.1024.tar.gz?raw=true)
+
+### Compiling (cudalign)
+
+```
+tar -xvzf masa-cudalign-3.9.1.1024.tar.gz
+cd masa-cudalign-3.9.1.1024
+./configure
+make
+```
+
+### Executing a MASA extension
+
+```
+./cudalign [options] seq1.fasta seq2.fasta
+```
+All the command line arguments can be retrieved using the --help parameter. See the [wiki](https://github.com/edanssandes/MASA-Core/wiki/Command-line-examples) for a list of command line examples.
 
 ### Performance Benchmarks
 
