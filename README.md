@@ -17,7 +17,7 @@ cd masa-cudalign-3.9.1.1024
 make
 ```
 
-### Executing a MASA extension
+### Executing CUDAlign
 
 ```
 ./cudalign [options] seq1.fasta seq2.fasta
