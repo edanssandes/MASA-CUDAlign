@@ -83,6 +83,6 @@ MASA-CUDAlign is an open source project with public license (GPLv3). A copy of t
 
 ### External Links
 
-[TPDS2013 - CUDAlign 3.0: Parallel Biological Sequence Comparison in Large GPU Clusters](http://www.computer.org/csdl/trans/td/2013/05/ttd2013051009-abs.html)
+[CUDAlign 3.0: Parallel Biological Sequence Comparison in Large GPU Clusters](http://www.computer.org/csdl/trans/td/2013/05/ttd2013051009-abs.html)
 
-[CCGrid2014 - Retrieving Smith-Waterman Alignments with Optimizations for Megabase Biological Sequences Using GPU](http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=6846451&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D6846451)
+[Retrieving Smith-Waterman Alignments with Optimizations for Megabase Biological Sequences Using GPU](http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=6846451&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D6846451)
