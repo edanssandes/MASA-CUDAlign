@@ -69,9 +69,9 @@ AC_ARG_ENABLE([device-debug],
 )
 
 AC_ARG_WITH([cuda-arch],
-	AC_HELP_STRING([--with-cuda-arch=ARCH],[select one cuda architecture, e.g. sm_20]),
+	AC_HELP_STRING([--with-cuda-arch=ARCH],[select one cuda architecture, e.g. sm_30]),
 	[CUDA_ARCH="$withval"],
-	[CUDA_ARCH="sm_20"]
+	[CUDA_ARCH="sm_30"]
 )
 NVCC_CUDA_ARCH="--gpu-architecture=$CUDA_ARCH"
 AC_DEFINE_UNQUOTED([COMPILED_CUDA_ARCH], ["$CUDA_ARCH"], [architecture used in --gpu-architecture nvcc parameter])
