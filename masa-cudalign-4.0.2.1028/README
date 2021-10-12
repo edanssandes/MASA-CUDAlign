@@ -1,0 +1,55 @@
+	                     MASA-CUDAlign extension
+	                 
+What is it?
+===========
+
+The MASA-CUDAlign extension is used with the MASA architecture to align DNA 
+sequences of unrestricted size with the Smith-Waterman algorithm combined 
+with Myers-Miller. It uses the NVIDIA CUDA platform for accelerating 
+the computation time. 
+
+This project is published under the GPLv3 License.
+
+Version
+=======
+
+The MASA-CUDAling extension follows the same version of the MASA project 
+contained in the libs/masa-core sub directory. 
+
+
+Compiling
+=========
+
+The simplest way to compile the project is to use the following commands:
+
+   $ ./configure
+   $ make
+
+More information can be found in the INSTALL file.
+   
+   
+Executing
+=========
+
+The default command line parameters are inherited from the MASA library, but
+new parameters were added by the MASA-CUDAlign extension. You can see all the 
+parameters passing the --help argument.
+
+
+
+
+Downloading
+===========
+
+The source code of this project can be downloaded from the git repository:
+
+   $ git clone <REPOSITORY>
+   
+Before compiling the project, execute the autoreconf script:
+
+   $ autoreconf --force --install
+   
+
+
+
+ 

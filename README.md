@@ -6,13 +6,13 @@ The <b>MASA-CUDAlign extension</b> is used with the <a href="https://github.com/
 
 ### Download
 
-Latest Version: [masa-cudalign-3.9.1.1024.tar.gz](releases/masa-cudalign-3.9.1.1024.tar.gz?raw=true)
+Latest Version: [masa-cudalign-4.0.2.1028.tar.gz](releases/masa-cudalign-4.0.2.1028.tar.gz?raw=true)
 
 ### Compiling (cudalign)
 
 ```
-tar -xvzf masa-cudalign-3.9.1.1024.tar.gz
-cd masa-cudalign-3.9.1.1024
+tar -xvzf masa-cudalign-4.0.2.1028.tar.gz
+cd masa-cudalign-4.0.2.1028
 ./configure
 make
 ```
