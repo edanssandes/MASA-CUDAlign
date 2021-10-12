@@ -1,7 +1,7 @@
 # MASA-CUDAlign
 
 <p align="justify">
-The <b>MASA-CUDAlign extension</b> is used with the <a href="https://github.com/edanssandes/MASA-Core">MASA architecture</a> to align DNA sequences of unrestricted size with the Smith-Waterman and Needleman-Wunsch algorithms combined with Myers-Miller. It uses the NVIDIA CUDA platform to accelerate the computation time. This extension is able to align huge DNA sequences with more than 200 million base pairs (MBP).
+The <b>MASA-CUDAlign extension</b> is used with the <a href="https://github.com/edanssandes/MASA-Core">MASA architecture</a> to align DNA sequences of unrestricted size with the Smith-Waterman and Needleman-Wunsch algorithms combined with Myers-Miller. It uses the NVIDIA CUDA platform to accelerate the computation time. This extension is able to align huge DNA sequences with more than 200 million base pairs (MBP). The current version is equivalent to CUDAlign 4.0 publication<sup>[TPDS2016](#references)</sup>, using multiple Fickett Band optimation in stage 4<sup>[CCPE2019](#references)</sup>.
 </p>
 
 ### Download
@@ -83,6 +83,39 @@ MASA-CUDAlign is an open source project with public license (GPLv3). A copy of t
 
 ### External Links
 
-[CUDAlign 3.0: Parallel Biological Sequence Comparison in Large GPU Clusters](http://www.computer.org/csdl/trans/td/2013/05/ttd2013051009-abs.html)
+<table border="0">
+<tr>
+<td><a href="https://doi.org/10.1089/cmb.2019.0031"><font size=1>[JCB2019]</font></a></td>
+<td><sub>Using Multiple Fickett Bands to Accelerate Biological Sequence Comparisons. JCB 2019: 908-922. Gabriel Silva, Edans Sandes, George Teodoro, Alba Melo</sub></td>
+</tr>
+<tr>
+<td><a href="http://dx.doi.org/10.1145/2858656"><font size=1>[TOPC2016]</font></a></td>
+<td><sub>MASA: a Multi-Platform Architecture for Sequence Aligners with Block Pruning. TOPC:2(4):28. Edans Sandes, Guillermo Miranda, Xavier Martorell, Eduard Ayguadé, George Teodoro, Alba Melo.
+</tr>
+<tr>
+<td><a href="http://dx.doi.org/10.1109/TPDS.2016.2515597"><font size=1>[TPDS2016]</font></a></td>
+<td><sub>Genome Wide Alignment in GPU Cluster with Incremental Speculative Traceback. TPDS 2016. Edans Sandes, Guillermo Miranda, Alba Melo, Xavier Martorell, Eduard Ayguadé.</sub>
+</td>
+</tr>
+<tr>
+<td><a href="http://dx.doi.org/10.1109/CCGrid.2014.18"><font size=1>[CCGRID2014]</font></a></td>
+<td><sub>CUDAlign 3.0: Parallel Biological Sequence Comparison in Large GPU Clusters. CCGRID 2014:160-169. Edans Sandes, Guillermo Miranda, Alba Melo, Xavier Martorell, Eduard Ayguadé.</sub>
+</td>
+</tr>
+<tr>
+<td><a href="http://dx.doi.org/10.1145/2555243.2555280"><font size=1>[PPOPP2014]</font></a></td>
+<td><sub>Fine-grain parallel megabase sequence comparison with multiple heterogeneous GPUs. PPOPP 2014:383-384. Edans Sandes, Guillermo Miranda, Alba Melo, Xavier Martorell, Eduard Ayguadé
+</sub></td>
+</tr>
+<tr>
+<td><a href="http://dx.doi.org/10.1109/TPDS.2012.194"><font size=1>[TPDS2013]</font></a></td>
+<td><sub>Retrieving Smith-Waterman Alignments with Optimizations for Megabase Biological Sequences using GPU. TPDS:24:5:1009-1021. Edans Sandes, Alba Melo</sub></td>
+<tr>
+<td><a href="http://dx.doi.org/10.1109/IPDPS.2011.114"><font size=1>[IPDPS2011]</font></a></td>
+<td><sub>Smith-Waterman Alignment of Huge Sequences with GPU in Linear Space. IPDPS 2011: 1199-1211. Edans Sandes, Alba Melo</sub></td>
+</tr>
+</tr>
+<td><a href="http://dx.doi.org/10.1145/1693453.1693473"><font size=1>[PPOPP2010]</font></a></td>
+<td><sub>CUDAlign: using GPU to accelerate the comparison of megabase genomic sequences. PPOPP 2010: 137-146. Edans Sandes, Alba Melo</sub></td>
+</tr>
 
-[Retrieving Smith-Waterman Alignments with Optimizations for Megabase Biological Sequences Using GPU](http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=6846451&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D6846451)
