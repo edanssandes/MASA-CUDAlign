@@ -1,8 +1,10 @@
 # MASA-CUDAlign
 
 <p align="justify">
-The <b>MASA-CUDAlign extension</b> is used with the <a href="https://github.com/edanssandes/MASA-Core">MASA architecture</a> to align DNA sequences of unrestricted size with the Smith-Waterman and Needleman-Wunsch algorithms combined with Myers-Miller. It uses the NVIDIA CUDA platform to accelerate the computation time. This extension is able to align huge DNA sequences with more than 200 million base pairs (MBP). The current version is equivalent to CUDAlign 4.0 publication<sup>[TPDS2016](#references)</sup>, using multiple Fickett Band optimation in stage 4<sup>[CCPE2019](#references)</sup>.
+The <b>MASA-CUDAlign extension</b> is used with the <a href="https://github.com/edanssandes/MASA-Core">MASA architecture</a> to align DNA sequences of unrestricted size with the Smith-Waterman and Needleman-Wunsch algorithms combined with Myers-Miller. It uses the NVIDIA CUDA platform to accelerate the computation time. This extension is able to align huge DNA sequences with more than 200 million base pairs (MBP).
 </p>
+
+The current version is equivalent to CUDAlign 4.0 publication<sup>[TPDS2016](#references)</sup>, using multiple Fickett Band optimation in stage 4<sup>[CCPE2019](#references)</sup>
 
 ### Download
 
@@ -30,14 +32,23 @@ All the command line arguments can be retrieved using the --help parameter. See 
 We have executed MASA-CUDAlign in many different environments. Here we will present the best results in different scenarios. We recommend to read the reference papers in order to understand the feature improvements in each test.
 </p>
 
-**Test Environment (Homogeneous GPU cluster)**: <a href="http://dx.doi.org/10.1109/CCGrid.2014.18"><font size=1>[CCGRID2014]</font></a><br>
+**Test Environment (Homogeneous GPU cluster)**: <sup>[TPDS2016](#references)</sup><br>
+XSEDE Keeneland Cluster - 384 x NVidia Tesla M2090. <br>
+(with traceback execution/full alignment retrieval)
+
+Sequence 1 | Sequence 2 | Len1 | Len2 | Time | GCUPS
+--- | --- | --- | --- | --- | --- |
+NC_000005.9 | NC_006472.3 | 180M | 183M | 53m8s | **10370**
+
+
+**Test Environment (Homogeneous GPU cluster)**: <sup>[CCGRID2014](#references)</sup><br>
 Minotauro Cluster - 64 x NVidia Tesla M2090. 
 
 Sequence 1 | Sequence 2 | Len1 | Len2 | Time | GCUPS
 --- | --- | --- | --- | --- | --- |
 NC_000001.10 | NC_006468.3 | 249M | 228M | 9h09m25s | **1726.47**
 
-**Test Environment (Heterogeneous GPU Nodes)**: <a href="http://dx.doi.org/10.1145/2555243.2555280"><font size=1>[PPOPP2014]</font></a><br>
+**Test Environment (Heterogeneous GPU Nodes)**: <sup>[PPOPP2014](#references)</sup><br>
 Laico Labs - 3 Hosts - 1 x NVidia GTX 580 + 2 x NVidia GTX 680. 
 
 Sequence 1 | Sequence 2 | Len1 | Len2 | Time | GCUPS
@@ -48,7 +59,7 @@ NC_000021.8 | NC_006488.2 | 48M | 46M | 4h27m04s | 139.63
 NC_000022.10 | NC_006489.3 | 51M | 50M | 5h03m00s | **140.36**
 
 
-**Test Environment (Heterogeneous GPUs in Single Node)**: <a href="http://dx.doi.org/10.1145/2555243.2555280"><font size=1>[PPOPP2014]</font></a><br>
+**Test Environment (Heterogeneous GPUs in Single Node)**: <sup>[PPOPP2014](#references)</sup><br>
 Panoramix Host - 1 x NVidia Tesla K20c + 2 x NVidia Tesla C2050. 
 
 Sequence 1 | Sequence 2 | Len1 | Len2 | Time | GCUPS
@@ -58,8 +69,8 @@ NC_000020.10 | NC_006487.3 | 63M | 62M | 7h42m08s | 100.96
 NC_000021.8 | NC_006488.2 | 48M | 46M | 6h10m38s | 100.62
 NC_000022.10 | NC_006489.3 | 51M | 50M | 7h03m36s | **101.38**
 
-**Test Environment (Single GPU)**: <a href="http://dx.doi.org/10.1109/TPDS.2012.194"><font size=1>[TPDS2013]</font></a><br>
-NVIDIA GeForce GTX 560 Ti 
+**Test Environment (Single GPU)**: <sup>[TPDS2013](#references)</sup><br>
+  NVIDIA GeForce GTX 560 Ti 
 
 Sequence 1 | Sequence 2 | Len1 | Len2 | Time | GCUPS
 --- | --- | --- | --- | --- | --- |
