@@ -81,7 +81,7 @@ BA000046.3 | NC_000021.7 | 33M | 47M | 8h26m09s | **50.70**
 MASA-CUDAlign is an open source project with public license (GPLv3). A copy of the [LICENSE](https://raw.githubusercontent.com/edanssandes/MASA-CUDAlign/master/LICENSE) is maintained in this repository. 
 
 
-### External Links
+### References:
 
 <table border="0">
 <tr>
