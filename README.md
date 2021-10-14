@@ -4,7 +4,7 @@
 The <b>MASA-CUDAlign extension</b> is used with the <a href="https://github.com/edanssandes/MASA-Core">MASA architecture</a> to align DNA sequences of unrestricted size with the Smith-Waterman and Needleman-Wunsch algorithms combined with Myers-Miller. It uses the NVIDIA CUDA platform to accelerate the computation time. This extension is able to align huge DNA sequences with more than 200 million base pairs (MBP).
 </p>
 
-The current version is equivalent to CUDAlign 4.0 publication<sup>[TPDS2016](#references)</sup>, using multiple Fickett Band optimation in stage 4<sup>[CCPE2019](#references)</sup>
+The current version is equivalent to CUDAlign 4.0 publication<sup>[TPDS2016](#references)</sup>, using multiple Fickett Band optimation in stage 4<sup>[CCPE2019](#references)</sup>. 
 
 ### Download
 
@@ -31,6 +31,16 @@ All the command line arguments can be retrieved using the --help parameter. See 
 <p align="justify">
 We have executed MASA-CUDAlign in many different environments. Here we will present the best results in different scenarios. We recommend to read the reference papers in order to understand the feature improvements in each test.
 </p>
+
+**Test Environment (Homogeneous GPU cluster)**: <sup>[TPDS2021](#references)</sup><br>
+Large GPU cluster - 512 x NVidia V100.<br>
+(block pruning features in multiple GPUs using a score-share workload distribution - [Figueiredo PhD thesis](https://repositorio.unb.br/bitstream/10482/41495/1/2021_MarcoAnt%C3%B4nioCaldasdeFigueir%C3%AAdoJ%C3%BAnior.pdf))<br>
+Aditional source code provided in: [SLURM-Scripts](https://github.com/Marcoacfbr/MultiBP-Scripts), [Static-MultiBP](https://github.com/Marcoacfbr/Static-MultiBP) and [Dynamic-MultiBP](https://github.com/Marcoacfbr/MultiBP).
+
+Sequence 1 | Sequence 2 | Len1 | Len2 | Time | GCUPS
+--- | --- | --- | --- | --- | --- |
+NC_000001.9 | NC_006468.3 | 249M | 228M | 11m | **82822**
+
 
 **Test Environment (Homogeneous GPU cluster)**: <sup>[TPDS2016](#references)</sup><br>
 XSEDE Keeneland Cluster - 384 x NVidia Tesla M2090. <br>
@@ -95,6 +105,10 @@ MASA-CUDAlign is an open source project with public license (GPLv3). A copy of t
 ### References:
 
 <table border="0">
+<tr>
+<td><a href="https://doi.org/10.1109/TPDS.2021.3084069"><font size=1>[TPDS2021]</font></a></td>
+<td><sub>Parallel Fine-Grained Comparison of Long DNA Sequences in Homogeneous and Heterogeneous GPU Platforms With Pruning. TPDS 2021: 3053--3065. Marco Figueiredo, João Navarro, Edans Sandes, George Teodoro, Alba Melo</sub></td>
+</tr>
 <tr>
 <td><a href="https://doi.org/10.1089/cmb.2019.0031"><font size=1>[JCB2019]</font></a></td>
 <td><sub>Using Multiple Fickett Bands to Accelerate Biological Sequence Comparisons. JCB 2019: 908-922. Gabriel Silva, Edans Sandes, George Teodoro, Alba Melo</sub></td>
